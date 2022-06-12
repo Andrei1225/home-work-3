@@ -48,7 +48,7 @@ public class Main {
         if (deliveryDistance <= 20) {
             System.out.println("Потребуется дней: 1");
         }
-        if (deliveryDistance > 20 && deliveryDistance <= 60 ) {
+        if (deliveryDistance > 20 && deliveryDistance <= 60) {
             System.out.println("Потребуется дней: 2");
         }
         if (deliveryDistance > 60 && deliveryDistance <= 100) {
@@ -96,6 +96,51 @@ public class Main {
                 break;
             default:
                 System.out.println("Такого месяца не существует");
+        }
+
+        // Задание 6
+
+        double age = 24;
+        double salary = 48_000;
+        double creditCardLimitCofficient = 1;
+        double creditCardLimit = 1;
+        if (salary >= 50_000) {
+            creditCardLimitCofficient = creditCardLimitCofficient * 1.2;
+        } else if (salary >= 80_000) {
+            creditCardLimitCofficient = 1.5;
+        } else {
+            creditCardLimitCofficient = creditCardLimitCofficient * 1;
+        }
+        if (age >= 23) {
+            creditCardLimit = creditCardLimit * 3 * salary * creditCardLimitCofficient;
+        } else {
+            creditCardLimit = creditCardLimit * 2 * salary * creditCardLimitCofficient;
+        }
+        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + creditCardLimit);
+
+        //  Задание 7
+
+        int Age = 25;
+        int wantedSum = 330_000;
+        double creditRate = 10;
+        int creditPeriod = 12;
+        int Sallary = 70_000;
+        double monthlyCreditPayment;
+        if (Age < 23) {
+            creditRate = creditRate + 1;
+        } else {
+            if (Age < 30) {
+                creditRate = creditRate + 0.5;
+            }
+            }
+        if (Sallary > 80_000) {
+            creditRate = creditRate - 0.7;
+        }
+        monthlyCreditPayment = wantedSum * ((creditRate / 100) + 1) / 12;
+        if (monthlyCreditPayment <= (Sallary / 2)) {
+            System.out.println("Одобрено");
+        } else {
+            System.out.println("Отказано");
         }
 
     }
